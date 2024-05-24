@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- start css link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/animate.css">
+    <link rel="stylesheet" href="css/profile.css">
+    <link rel="stylesheet" href="../css/fontAwesome.css">
+    <!-- end css link -->
+    <!-- start js link -->
+    <script src="../JavaScript/bootstrap.js"></script>
+    <script src="../JavaScript/sweetalert.js"></script>
+    <!-- end js link -->
+    <title>Profile</title>
+</head>
+
+<body>
+    <h1>Welcome to my profile</h1>
+    <nav class="navbar navbar-expand-md bg-light shadow-lg fixed-top navbar-light">
+        <div class="container-fluid">
+            <img src="../img/logo.jpg" class="rounded-circle" width="60" alt="">
+            <a href="" class="mx-4 text-white navbar-brand">
+                HMS
+            </a>
+
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#myMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="navbar-collapse collapse" id="myMenu">
+                <ul class="navbar-nav w-100 justify-content-end ">
+                    <div class="input-group mx-5 w-50">
+                        <input type="search" class="form-control" placeholder="search by Name,Email.Room no...">
+                        <span><button class="input-group-text text-white action-btn fw-bold btn">Search</button></span>
+                    </div>
+                    <button class="btn text-white action-btn logout-Btn fw-bold px-4">Logout</button>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <br><br><br>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-12">
+                <!-- nav tab -->
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <a href="#Booking" class="nav-link active" data-bs-toggle="tab">
+                            Booking
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#login" class="nav-link " data-bs-toggle="tab">
+                            In House
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#login" class="nav-link " data-bs-toggle="tab">
+                            Cashier
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#login" class="nav-link " data-bs-toggle="tab">
+                            Archive
+                        </a>
+                    </li>
+                </ul>
+                <!-- nav panes -->
+                <div class="tab-content">
+                    <div class="tab-pane active container mt-3" id="Booking">
+                        <div class="row my-5">
+                            <div class="col-md-4 text-center">
+                                <button data-bs-toggle="modal" data-bs-target="#registration-modal"
+                                    class=" btn action-btn b-register-btn pf-4 text-white fw-bold">Register</button>
+                            </div>
+                            <div class="col-md-4 text-center">
+                                <button class="btn action-btn pf-4 text-white fw-bold">Print</button>
+                            </div>
+                            <div class="col-md-4 text-center">
+                                <button class="btn action-btn pf-4 text-white fw-bold">Total Booking</button>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h1></h1>
+                            <table class="table table-striped text-center">
+                                <thead>
+                                    <tr>
+                                        <th>Sr No.</th>
+                                        <th>Location</th>
+                                        <th>Room no.</th>
+                                        <th>Full Name</th>
+                                        <th>Check-In</th>
+                                        <th>Check-out</th>
+                                        <th>Total People</th>
+                                        <th>Mobile</th>
+                                        <th>Price</th>
+                                        <th>Notice</th>
+                                        <th>Created At</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody class="booking-list">
+                                    <!-- <tr>
+                                        <td>1</td>
+                                        <td>Mumbai</td>
+                                        <td>15</td>
+                                        <td>Alok kumar</td>
+                                        <td>15-08-2024</td>
+                                        <td>25-08-2024</td>
+                                        <td>5</td>
+                                        <td>7668151566</td>
+                                        <td>999</td>
+                                        <td>All includes</td>
+                                        <td>12-08-2024</td>
+                                        <td>
+                                            <button class="btn p-1 px-2 btn-primary">
+                                                <i class="fa fa-edit"></i>
+                                            </button>
+                                            <button class="btn p-1 px-2 text-white btn-info">
+                                                <i class="fa fa-check"></i>
+                                            </button>
+                                            <button class="btn p-1 px-2 btn-danger">
+                                                <i class="fa fa-trash"></i>
+                                            </button>
+                                        </td>
+                                    </tr> -->
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                    <div class="tab-pane container mt-3" id="login">
+                        <!-- <img src="img/signup-2.webp" class="w-25" alt=""> -->
+                        <form class="login-form">
+                            <input type="email" placeholder="Email" class="mb-3 form-control">
+                            <input type="password" placeholder="Password" class="mb-3 form-control">
+                            <button type="submit" class="btn btn-primary w-100">Login</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- start modals coding -->
+    <div class="modal animate__animated animate__zoomIn" id="registration-modal">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5>registration Form</h5>
+                    <button type="button" class="btn-close b-modal-close-btn" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="body-body p-4">
+                    <form class="booking-form">
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <input required name="fullName" type="text" placeholder="Fullname"
+                                    class="mb-3 form-control">
+                            </div>
+                            <div class="col-md-6">
+                                <input required name="location" type="text" placeholder="Location"
+                                    class="mb-3 form-control">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <input name="roomNumber" type="text" placeholder="Room No." class="mb-3 form-control">
+                            </div>
+                            <div class="col-md-6">
+                                <input name="toatalPeople" type="text" placeholder="Total People"
+                                    class="mb-3 form-control">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label>Check-In-Date</label>
+                                <input required name="checkInDate" type="date" placeholder="" class="mb-3 form-control">
+                            </div>
+
+                            <div class="col-md-6">
+                                <label>Check-out-Date</label>
+                                <input required name="checkOutDate" type="date" placeholder=""
+                                    class="mb-3 form-control">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <input name="Price" type="number" placeholder="Price" class="mb-3 form-control">
+                            </div>
+                            <div class="col-md-6">
+                                <input required name="mobile" type="number" placeholder="Mobile"
+                                    class="mb-3 form-control">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <textarea name="notice" class="form-control" placeholder="Notice"></textarea>
+                        </div>
+                        <div class="row mb-3">
+                            <button type="submit" class="btn action-btn text-white fw-bold ">Register</button>
+                            <button type="button" class="btn d-none bg-danger text-white fw-bold">Update</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end modals coding -->
+</body>
+<script src="js/profile.js"></script>
+
+</html>

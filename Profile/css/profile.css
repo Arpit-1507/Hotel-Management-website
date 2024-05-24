@@ -1,0 +1,22 @@
+.navbar{
+    background-image: linear-gradient(#306f88, #6bb8e9);
+}
+.navbar-brand{
+    font-size: 30px !important;
+    font-weight: bold;
+}
+
+.nav-item{
+    font-size: 22px !important;
+}
+
+.action-btn{
+    background-image: linear-gradient(#306f88, #6bb8e9);
+    border: none !important;
+    box-shadow: none !important;
+    font-size: 22px !important;
+}
+.nav-tabs .nav-link.active{
+    background-image: linear-gradient(#306f88, #6bb8e9);
+    color: #fff !important;
+}
