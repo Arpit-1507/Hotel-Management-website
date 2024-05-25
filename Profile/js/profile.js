@@ -41,6 +41,7 @@ const formatDate = (data, istime) => {
   mm = mm < 10 ? "0" + mm : mm;
   return `${dd}-${mm}-${yy} ${istime ? time : " "}`;
 };
+console.log(formatDate());
 
 allBData = fetchData(user + "_allBData");
 console.log(allBData);
@@ -150,12 +151,36 @@ function updateBDatafun() {
       let allBBtn = bookingForm.querySelectorAll("button");
       allBBtn[0].classList.add("d-none");
       allBBtn[1].classList.remove("d-none");
-      let tr = btn.parentElement.parentElement;
-      let allTd = tr.querySelectorAll("td");
-      let i;
-      for (i = 1; i < allTd.length - 3; i++) {
-        allBInput[i].value = allTd[i].innerText;
-      }
+      let obj = allBData[index];
+      allBInput[0].value = obj.fullName;
+      allBInput[1].value = obj.location;
+      allBInput[2].value = obj.roomNumber;
+      allBInput[3].value = obj.toatalPeople;
+      allBInput[4].value = obj.checkInDate;
+      allBInput[5].value = obj.checkOutDate;
+      allBInput[6].value = obj.Price;
+      allBInput[7].value = obj.mobile;
+      bTexteria.value = obj.notice;
+      allBBtn[1].onclick = () => {
+        let formData = {
+          notice: bTexteria.value,
+          createdAt: new Date(),
+        };
+        console.log(formData);
+
+        for (let el of allBInput) {
+          let key = el.name;
+          let value = el.value;
+          formData[key] = value;
+        }
+        allBData[index] = formData;
+        allBBtn[0].classList.remove("d-none");
+        allBBtn[1].classList.add("d-none");
+        bookingForm.reset();
+        bCloseBtn.click();
+        localStorage.setItem(user + "_allBData", JSON.stringify(allBData));
+        ShowBookingData();
+      };
     };
   });
 }
